@@ -1,0 +1,57 @@
+﻿@model ToDoList.DAL.Model.Todo
+
+    @{
+        ViewBag.Title = "Delete";
+    }
+
+    <h2>Sil</h2>
+
+    <h3>Bunu silmek istediğinizden emin misiniz?</h3>
+    <div>
+        <h4>To Do</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Bittimi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Bittimi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Baslik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Baslik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tarih)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-default" /> |
+                @Html.ActionLink("Ana Sayfa", "Index")
+            </div>
+        }
+    </div>

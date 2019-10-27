@@ -1,0 +1,50 @@
+﻿@model ToDoList.DAL.Model.Todo
+
+    @{
+        ViewBag.Title = "Details";
+    }
+
+    <h2>Ayrıntılar</h2>
+
+    <div>
+        <h4>ToDo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Bittimi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Bittimi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Baslik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Baslik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tarih)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Düzenle", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Ana Sayfa", "Index")
+    </p>

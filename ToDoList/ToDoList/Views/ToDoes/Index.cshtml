@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ToDoList.DAL.Model.Todo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ana Sayfa</h2>
+
+<p>
+    @Html.ActionLink("Yeni Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bittimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Baslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </th>
+        <th></th>
+    </tr>
+    @if(Model!=null)
+    { 
+foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bittimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Baslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tarih)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Ayrıntılar", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+    }
+</table>
